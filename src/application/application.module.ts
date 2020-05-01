@@ -1,9 +1,9 @@
 import { Module, Global } from '@nestjs/common';
 import { DomainModule } from 'src/domain';
-import { AppUseCase } from 'src/application';
+import { AppUseCase, UserRepository } from 'src/application';
 
-const EXPORTS = [AppUseCase];
-const PROVIDERS = [AppUseCase];
+const EXPORTS = [AppUseCase, UserRepository];
+const PROVIDERS = [AppUseCase, UserRepository];
 const MODULES = [DomainModule];
 
 @Global()

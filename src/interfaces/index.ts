@@ -1,2 +1,2 @@
-export * from './http/resource';
+export * from './http';
 export * from './interface.module';

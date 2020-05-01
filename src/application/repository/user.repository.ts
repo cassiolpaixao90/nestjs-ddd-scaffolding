@@ -10,10 +10,10 @@ export class UserRepository {
 		private readonly sequelizeInstance
 	) {}
 
-	public async create(user: object): Promise<UserModel> {
-		return await this.sequelizeInstance.transaction(async transaction => {
+	public async create(userModel: object): Promise<UserModel> {
+		return await this.sequelizeInstance.transaction(async (transaction) => {
 			const options = { transaction, returning: true };
-			return await this.userRepository.create<UserModel>(user, options);
+			return await this.userRepository.create<UserModel>(userModel, options);
 		});
 	}
 

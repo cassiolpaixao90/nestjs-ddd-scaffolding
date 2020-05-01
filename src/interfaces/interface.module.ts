@@ -1,13 +1,13 @@
 import { Module, Global } from '@nestjs/common';
-import { AppController } from 'src/interfaces';
-import { ApplicationModule } from 'src/application';
+import { AppController, AuthController } from 'src/interfaces';
+import { IsUserAlreadyExist } from 'src/interfaces';
 
-const CONTROLLERS = [AppController];
-const MODULES = [ApplicationModule];
+const CONTROLLERS = [AppController, AuthController];
+const PROVIDERS = [IsUserAlreadyExist];
 
 @Global()
 @Module({
-	imports: [...MODULES],
-	controllers: [...CONTROLLERS]
+	controllers: [...CONTROLLERS],
+	providers: [...PROVIDERS]
 })
 export class InterfaceModule {}
