@@ -11,6 +11,14 @@
 			"runtimeExecutable": "npm",
 			"runtimeArgs": ["run-script", "start:debug"],
 			"port": 9229
+		},
+		{
+			"type": "node",
+			"request": "launch",
+			"name": "test:debug",
+			"runtimeExecutable": "npm",
+			"runtimeArgs": ["run-script", "test:debug"],
+			"port": 9229
 		}
 	]
 }
